@@ -122,8 +122,8 @@ export function Navbar() {
             <div className="bg-orange-500 p-2 rounded-xl group-hover:rotate-12 transition-transform duration-300 shadow-lg shadow-orange-500/20">
               <Package className="w-6 h-6 text-white" />
             </div>
-            <span className="font-black text-2xl text-white tracking-tighter uppercase">
-              Swift<span className="text-orange-500">Courier</span>
+            <span className="font-black text-xl text-white tracking-tighter uppercase">
+              Surepath <span className="text-orange-500">Logistics ltd</span>
             </span>
           </Link>
 
@@ -151,11 +151,11 @@ export function Navbar() {
             <div className="h-6 w-px bg-slate-800 mx-2" />
 
             <Link
-              to="/admin"
+              to="/tracking"
               className="flex items-center gap-2 bg-white/5 hover:bg-orange-500 text-white px-5 py-2.5 rounded-xl text-xs font-black uppercase tracking-widest transition-all border border-white/10 hover:border-orange-500 shadow-xl"
             >
               <ShieldCheck className="w-4 h-4" />
-              Terminal
+              Track Parcel
             </Link>
           </div>
 
@@ -186,12 +186,12 @@ export function Navbar() {
               </Link>
             ))}
             <Link
-              to="/admin"
+              to="/tracking"
               className="flex items-center justify-center gap-3 bg-orange-500 text-white w-full py-4 rounded-2xl font-black uppercase tracking-[0.2em]"
               onClick={() => setIsOpen(false)}
             >
               <ShieldCheck className="w-5 h-5" />
-              Admin Portal
+              Track Parcel
             </Link>
           </div>
         </div>

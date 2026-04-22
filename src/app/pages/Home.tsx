@@ -407,7 +407,7 @@ export function Home() {
             animate={{ opacity: 1 }}
             className="inline-block px-4 py-1 rounded-full bg-orange-500 text-md font-bold uppercase tracking-widest mb-6 "
           >
-            SWIFT COURIER EXCLUSIVE SERVICE
+            Surepath Logistics ltd
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}

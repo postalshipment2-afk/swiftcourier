@@ -280,7 +280,7 @@ export function Contact() {
     <div className="min-h-screen bg-white text-slate-900">
       {/* HERO SECTION - Softened Typography */}
       <section
-        className="relative h-[400px] flex items-center justify-center text-white"
+        className="relative h-100 flex items-center justify-center text-white"
         style={{
           backgroundImage:
             "url(https://images.unsplash.com/photo-1557023279-753a4ae10313?auto=format&fit=crop&q=80&w=2000)",
@@ -361,9 +361,9 @@ export function Contact() {
                       Phone Numbers
                     </h3>
                     <p className="text-slate-600">
-                      Main: +1 (555) 123-4567
+                      Main: +1 (413) 217-0381
                       <br />
-                      Support: +1 (555) 123-4568
+                      Support: +1 (413) 217-0381
                     </p>
                   </div>
                 </div>
@@ -507,7 +507,7 @@ export function Contact() {
       </section>
 
       {/* MAP SECTION - Kept as requested */}
-      <section className="h-[500px] w-full grayscale hover:grayscale-0 transition-all duration-700">
+      <section className="h-125 w-full grayscale hover:grayscale-0 transition-all duration-700">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.9147703055!2d-74.11976373946229!3d40.69740344223377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1677685432123!5m2!1sen!2s"
           width="100%"
