@@ -9,6 +9,7 @@ import { Contact } from "./pages/Contact";
 import { Tracking } from "./pages/Tracking";
 import { Admin } from "./pages/admin/Admin";
 import "../styles/carousel.css";
+import Adminlogin from "./pages/admin/Adminlogin";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/tracking" element={<Tracking />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/Admin-panel" element={<Adminlogin />} />
           </Routes>
         </main>
         <Footer />
