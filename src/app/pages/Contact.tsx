@@ -287,6 +287,9 @@ export function Contact() {
       }
 
       const result = await response.json();
+      console.log("Deployment successful:", result);
+      toast.success("Message sent successfully! We'll get back to you soon.");
+      setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
       // Handle success (e.g., clear form, show message)
     } catch (err) {
       console.error("Error sending message:", err);
