@@ -389,13 +389,13 @@ export function Contact() {
                       >
                         info@surepath-logistics.com
                       </a>
-                      <br />
+                      {/* <br />
                       <a
                         href="mailto:support@surepath-logistics.com"
                         className="hover:underline"
                       >
                         support@surepath-logistics.com
-                      </a>
+                      </a> */}
                     </span>
                   </div>
                 </div>
