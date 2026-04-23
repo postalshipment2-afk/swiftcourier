@@ -23,7 +23,7 @@ export default function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/tracking" element={<Tracking />} />
-            <Route path="/admin" element={<Admin />} />
+            <Route path="/Admin_Dashboard" element={<Admin />} />
             <Route path="/Admin-panel" element={<Adminlogin />} />
           </Routes>
         </main>
