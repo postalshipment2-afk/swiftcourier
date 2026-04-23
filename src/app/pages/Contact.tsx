@@ -252,7 +252,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
 import { toast } from "sonner";
-
 export function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -265,23 +264,34 @@ export function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const response = await fetch(
-      "https://kgevtktjghjtzyrmxyhb.supabase.co/functions/v1/quick-endpoint",
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      },
-    );
+    // Replace this with your actual environment variable
+    // or the key exported from your lib/supabase file
+    const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-    if (response.ok) {
-      toast.success("Message sent successfully! We'll get back to you soon.");
-      setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
-    } else {
-      toast.error("Failed to send message. Please try again.");
+    try {
+      const response = await fetch(
+        "https://kgevtktjghjtzyrmxyhb.supabase.co/functions/v1/quick-endpoint",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${SUPABASE_ANON_KEY}`,
+          },
+          body: JSON.stringify(formData),
+        },
+      );
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Deployment failed");
+      }
+
+      const result = await response.json();
+      // Handle success (e.g., clear form, show message)
+    } catch (err) {
+      console.error("Error sending message:", err);
     }
   };
-
   const handleChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
