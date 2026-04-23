@@ -1,36 +1,40 @@
-import { useState } from 'react';
-import { supabase } from '../../../lib/supabase';
-import { toast } from 'sonner';
-import { Receipt } from './Receipt';
-import { Package, User, MapPin, FileText } from 'lucide-react';
+import { useState } from "react";
+import { supabase } from "../../../lib/supabase";
+import { toast } from "sonner";
+import { Receipt } from "./Receipt";
+import { Package, User, MapPin, FileText } from "lucide-react";
 
 export function RegisterClient() {
   const [showReceipt, setShowReceipt] = useState(false);
   const [receiptData, setReceiptData] = useState<any>(null);
   const [formData, setFormData] = useState({
-    sender_name: '',
-    sender_email: '',
-    sender_phone: '',
-    sender_address: '',
-    sender_city: '',
-    sender_country: '',
-    receiver_name: '',
-    receiver_email: '',
-    receiver_phone: '',
-    receiver_address: '',
-    receiver_city: '',
-    receiver_country: '',
-    package_weight: '',
-    package_description: '',
+    sender_name: "",
+    sender_email: "",
+    sender_phone: "",
+    sender_address: "",
+    sender_city: "",
+    sender_country: "",
+    receiver_name: "",
+    receiver_email: "",
+    receiver_phone: "",
+    receiver_address: "",
+    receiver_city: "",
+    receiver_country: "",
+    package_weight: "",
+    package_description: "",
   });
 
   const generateTrackingNumber = () => {
-    const prefix = 'SC';
+    const prefix = "SPL";
     const random = Math.floor(100000000 + Math.random() * 900000000);
     return `${prefix}${random}`;
   };
 
-  const sendNotification = async (email: string, subject: string, message: string) => {
+  const sendNotification = async (
+    email: string,
+    subject: string,
+    message: string,
+  ) => {
     console.log(`Sending notification to ${email}: ${subject} - ${message}`);
     toast.info(`Notification sent to ${email}`);
   };
@@ -42,7 +46,7 @@ export function RegisterClient() {
     const shipmentData = {
       tracking_number: trackingNumber,
       ...formData,
-      status: 'pending',
+      status: "pending",
       current_location: `${formData.sender_city}, ${formData.sender_country}`,
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
@@ -50,62 +54,64 @@ export function RegisterClient() {
 
     try {
       const { data, error } = await supabase
-        .from('shipments')
+        .from("shipments")
         .insert([shipmentData])
         .select()
         .single();
 
       if (error) throw error;
 
-      await supabase.from('status_history').insert([
+      await supabase.from("status_history").insert([
         {
           shipment_id: data.id,
-          status: 'Pending',
+          status: "Pending",
           location: `${formData.sender_city}, ${formData.sender_country}`,
           timestamp: new Date().toISOString(),
-          notes: 'Shipment registered and awaiting pickup',
+          notes: "Shipment registered and awaiting pickup",
         },
       ]);
 
       await sendNotification(
         formData.sender_email,
-        'Shipment Registered Successfully',
-        `Your shipment has been registered with tracking number: ${trackingNumber}. We will notify you when it's picked up.`
+        "Shipment Registered Successfully",
+        `Your shipment has been registered with tracking number: ${trackingNumber}. We will notify you when it's picked up.`,
       );
 
       await sendNotification(
         formData.receiver_email,
-        'Incoming Shipment Notification',
-        `A package has been registered for delivery to you. Tracking number: ${trackingNumber}`
+        "Incoming Shipment Notification",
+        `A package has been registered for delivery to you. Tracking number: ${trackingNumber}`,
       );
 
       setReceiptData(data);
       setShowReceipt(true);
-      toast.success('Client registered successfully!');
+      toast.success("Client registered successfully!");
 
       setFormData({
-        sender_name: '',
-        sender_email: '',
-        sender_phone: '',
-        sender_address: '',
-        sender_city: '',
-        sender_country: '',
-        receiver_name: '',
-        receiver_email: '',
-        receiver_phone: '',
-        receiver_address: '',
-        receiver_city: '',
-        receiver_country: '',
-        package_weight: '',
-        package_description: '',
+        sender_name: "",
+        sender_email: "",
+        sender_phone: "",
+        sender_address: "",
+        sender_city: "",
+        sender_country: "",
+        receiver_name: "",
+        receiver_email: "",
+        receiver_phone: "",
+        receiver_address: "",
+        receiver_city: "",
+        receiver_country: "",
+        package_weight: "",
+        package_description: "",
       });
     } catch (error: any) {
-      console.error('Error registering client:', error);
-      toast.error('Failed to register client. Please try again.');
+      console.error("Error registering client:", error);
+      toast.error("Failed to register client. Please try again.");
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -136,7 +142,9 @@ export function RegisterClient() {
               />
             </div>
             <div>
-              <label className="block text-gray-700 mb-2">Email Address *</label>
+              <label className="block text-gray-700 mb-2">
+                Email Address *
+              </label>
               <input
                 type="email"
                 name="sender_email"
@@ -217,7 +225,9 @@ export function RegisterClient() {
               />
             </div>
             <div>
-              <label className="block text-gray-700 mb-2">Email Address *</label>
+              <label className="block text-gray-700 mb-2">
+                Email Address *
+              </label>
               <input
                 type="email"
                 name="receiver_email"
