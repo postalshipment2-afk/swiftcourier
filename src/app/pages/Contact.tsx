@@ -360,11 +360,17 @@ export function Contact() {
                     <h3 className="font-bold text-slate-950 mb-1 uppercase tracking-wider text-sm">
                       Phone Numbers
                     </h3>
-                    <p className="text-slate-600">
-                      Main: +1 (413) 217-0381
+                    <span className="text-slate-600">
+                      Main:{" "}
+                      <a href="tel:+14132170381" className="hover:underline">
+                        +1 (413) 217-0381
+                      </a>
                       <br />
-                      Support: +1 (413) 217-0381
-                    </p>
+                      Support:{" "}
+                      <a href="tel:+14132170381" className="hover:underline">
+                        +1 (413) 217-0381
+                      </a>
+                    </span>
                   </div>
                 </div>
 
@@ -376,11 +382,21 @@ export function Contact() {
                     <h3 className="font-bold text-slate-950 mb-1 uppercase tracking-wider text-sm">
                       Email Addresses
                     </h3>
-                    <p className="text-slate-600">
-                      General: info@swiftcourier.com
+                    <span className="text-slate-600">
+                      <a
+                        href="mailto:info@surepath-logistics.com"
+                        className="hover:underline"
+                      >
+                        info@surepath-logistics.com
+                      </a>
                       <br />
-                      Support: support@swiftcourier.com
-                    </p>
+                      <a
+                        href="mailto:support@surepath-logistics.com"
+                        className="hover:underline"
+                      >
+                        support@surepath-logistics.com
+                      </a>
+                    </span>
                   </div>
                 </div>
 
