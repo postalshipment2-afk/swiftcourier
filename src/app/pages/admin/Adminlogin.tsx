@@ -20,7 +20,7 @@ const LoginPage = () => {
 
       // Navigate to /Admin after a short delay to let the user see the toast
       setTimeout(() => {
-        navigate("/Admin");
+        navigate("/Admin_Dashboard");
       }, 1500);
     } else {
       toast.error("Invalid credentials. Please try again.");
