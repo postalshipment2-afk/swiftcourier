@@ -380,7 +380,7 @@ export function Tracking() {
     <div className="min-h-screen bg-white text-slate-900">
       {/* HERO SECTION */}
       <section
-        className="relative h-[450px] flex items-center justify-center text-white"
+        className="relative h-112.5 flex items-center justify-center text-white"
         style={{
           backgroundImage:
             "url(https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000)",
@@ -395,7 +395,7 @@ export function Tracking() {
             animate={{ opacity: 1 }}
             className="inline-block px-4 py-1 rounded-full bg-orange-500 text-xs font-bold uppercase tracking-[0.2em] mb-6 "
           >
-            Live Logistics
+            Surepath Logistics ltd{" "}
           </motion.span>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -566,7 +566,7 @@ export function Tracking() {
               </h3>
               {history.length > 0 ? (
                 <div className="relative space-y-0">
-                  <div className="absolute left-[23px] top-2 bottom-0 w-0.5 bg-slate-100"></div>
+                  <div className="absolute left-5.75 top-2 bottom-0 w-0.5 bg-slate-100"></div>
                   {history.map((item, index) => (
                     <div
                       key={item.id}
@@ -625,7 +625,7 @@ export function Tracking() {
       {!shipment && !loading && (
         <section className="py-32">
           <div className="max-w-xl mx-auto px-4 text-center">
-            <div className="w-24 h-24 bg-slate-50 rounded-[2rem] flex items-center justify-center mx-auto mb-8 border border-slate-100">
+            <div className="w-24 h-24 bg-slate-50 rounded-4xl flex items-center justify-center mx-auto mb-8 border border-slate-100">
               <Package className="w-12 h-12 text-slate-300" />
             </div>
             <h3 className="text-3xl font-black text-slate-950 mb-4">

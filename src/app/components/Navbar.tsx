@@ -123,7 +123,7 @@ export function Navbar() {
               <Package className="w-6 h-6 text-white" />
             </div>
             <span className="font-black text-xl text-white tracking-tighter uppercase">
-              Surepath <span className="text-orange-500">Logistics ltd</span>
+              Surepath <span className="text-orange-500">- Logistics ltd</span>
             </span>
           </Link>
 
