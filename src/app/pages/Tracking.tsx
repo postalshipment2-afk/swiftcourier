@@ -464,6 +464,12 @@ export function Tracking() {
                   <p className="text-slate-500 mt-2 font-medium">
                     Content: {shipment.package_description}
                   </p>
+                  {/* <p className="text-slate-500 mt-2 font-medium">
+                    Departure Date : {shipment.departure_date.slice(0, 10)}
+                  </p>
+                  <p className="text-slate-500 mt-2 font-medium">
+                    Arrival Date: {shipment.arrival_date}
+                  </p> */}
                 </div>
                 <div className="flex flex-col items-end">
                   {getStatusIcon(shipment.status)}
@@ -483,6 +489,9 @@ export function Tracking() {
                     </div>
                     Origin Details
                   </h3>
+                  <p className="text-slate-500 mt-2 font-medium">
+                    Departure Date : {shipment.departure_date.slice(0, 10)}
+                  </p>
                   <div className="space-y-3 bg-slate-50 p-6 rounded-2xl border border-slate-100">
                     <p className="text-slate-600 text-sm">
                       <span className="text-slate-400 font-medium block text-xs uppercase mb-1">
@@ -512,6 +521,9 @@ export function Tracking() {
                     </div>
                     Destination Details
                   </h3>
+                  <p className="text-slate-500 mt-2 font-medium">
+                    Arrival Date: {shipment.arrival_date}
+                  </p>
                   <div className="space-y-3 bg-slate-50 p-6 rounded-2xl border border-slate-100">
                     <p className="text-slate-600 text-sm">
                       <span className="text-slate-400 font-medium block text-xs uppercase mb-1">
