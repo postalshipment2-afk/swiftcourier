@@ -604,9 +604,9 @@ export function Tracking() {
                           >
                             {item.status.replace("_", " ")}
                           </p>
-                          <p className="text-xs font-bold text-slate-400 bg-slate-50 px-3 py-1 rounded-lg">
+                          {/* <p className="text-xs font-bold text-slate-400 bg-slate-50 px-3 py-1 rounded-lg">
                             {new Date(item.timestamp).toLocaleString()}
-                          </p>
+                          </p> */}
                         </div>
                         <p className="text-slate-600 font-medium mb-2">
                           {item.location}
